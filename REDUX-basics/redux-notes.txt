@@ -1,0 +1,48 @@
+Connecting React and Redux
+
+1.) Install redux and react-redux
+We can connect it via index.js file
+
+a.) We define a store in index.js
+b.) a reducer in store>reducer.js
+c.) Wrap main <App /> inside Provider (imported from react-redux) and hook out store in it
+    Provider is a helper component which help us to inject our store into the react components
+    <Provider store={store}><App /></Provider>
+
+d.) Add connect function to the Counter.js
+    connect is a function which returns a function which then takes a component
+    which is a high order component
+    connect()(Counter);
+    HERE we can pass which states we want in this container AND
+    which actions do we need to perform 
+
+A common syntax
+
+HERE from that big object store we only get the states that we want and use it as props in our component
+
+const mapStateToProps = state => {
+    return{
+        ctr:state.counter
+    };
+};
+export default connect(mapStateToProps)(Counter);
+
+
+# HOW can we change the counter now ?
+
+<button onClick={this.props.onIncrementCounter} value="-5"> SUB 5</button>
+                                OR
+<button onClick={() => this.props.onIncrementCounter(-5)} value="-5"> SUB 5</button>
+
+mapDispatchToProps = dispatch =>{
+    return {
+    onIncrementCounter: () => dispatch({type:'DECREMENT10', val:1})
+                OR
+    onIncrementCounter: (val) => dispatch({type:'DECREMENT10', buttval:val})
+    }
+
+
+
+
+
+we can use combinedreducers to combine different reducers, more on this later? [IMP tho]

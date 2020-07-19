@@ -17,7 +17,7 @@
     font-size: large;
     font-weight: 100;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background-color 0.2s,transform 0.2s;
+    transition: background-color 0.2s,transform 0.1s;
 
 }
 

@@ -4,9 +4,18 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// ADDING REDUX
+import {createStore} from 'redux';
+
+import reducer from './store/reducer';
+import {Provider} from 'react-redux';
+
+const store = createStore(reducer); // we need a reducer here  right, as there can be many reducers lets make a folder and
+// add all the reducers there
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}><App /></Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
