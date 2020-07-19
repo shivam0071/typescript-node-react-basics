@@ -1,0 +1,40 @@
+.Counter{
+    width:90%;
+    margin:0 5%;
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 2px 2px rgb(233, 203, 37);
+    padding: 10px 0px;
+    background-color: rgb(253, 253, 253);
+}
+
+.Counter button{
+    height:40px;
+    width: auto;
+    margin-right: 40px;
+    border-radius: 2px;
+    background-color: white;
+    font-size: large;
+    font-weight: 100;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.2s,transform 0.2s;
+
+}
+
+.Counter p,h2{
+    color:orange;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.Counter button:active,
+.Counter button:hover{
+    background-color: orange;
+    transform: scale(1.15);
+
+}
+
+
+.Counter h2{
+    color: black;
+}
