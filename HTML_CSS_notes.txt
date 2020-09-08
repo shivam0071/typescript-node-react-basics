@@ -1,0 +1,21 @@
+https://codingheroes.io/resources/
+
+
+JS
+https://www.jsdelivr.com/
+
+
+RESPONSIVE GALARY VIDEO MAP etc
+Magnific Popup is a responsive lightbox & dialog script with focus on performance and providing best experience for user with any device
+(for jQuery or Zepto.js).
+https://dimsemenov.com/plugins/magnific-popup/
+
+
+TOOL TIPS
+https://iamceege.github.io/tooltipster/
+
+Waypoints
+http://imakewebthings.com/waypoints/
+
+
+
