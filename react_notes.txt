@@ -1,0 +1,21 @@
+Initialize a react project using typescript by :
+    npx create-react-app subway-project-1 --template typescript
+
+
+In subway-project-1
+folder containers have statefull components
+folder components have stateless
+
+
+
+
+
+## TEMPLATE FOR STATELESS Components ##
+import React,{Fragment} from 'react';
+import classes from './BurgerIngredient.module.css';
+
+const burgerIngredient = (props:any) => {
+
+};
+
+export default burgerIngredient;

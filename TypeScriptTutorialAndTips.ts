@@ -20,7 +20,7 @@
 // https://devdocs.io/javascript/
 
 // _________________________________________________________________________________
-// ************ STRINGS ******************
+// 1. ) ************ STRINGS ******************
 // https://devdocs.io/javascript/global_objects/string
 // ---------------------------------------------------------------------------------
 
@@ -74,11 +74,151 @@ console.log(color.split('d'));  // if d is in the end then its replaced by an em
 // [ 'Th', '' ]
 
 
+// 6.)UPPERCASE
+//  PYTHON -- color.upper() 
+//  JS - color.toUpperCase()
+// y.toUpperCase()
+// 'THISISASTRING'
+
+// 7.) LOWERCASE ---- PYTHON y.lower()
+// y.toLowerCase()
+// 'thisisastring'
+
+// 8.) STRING FORMATTING
+// PYTHON ------- "this is {} and {}".format("sad", "bad") ---> this is sad and bad
+
+
 // Methods that are in PYTHON but NOT in JS/TS
 // 1.) COUNT the no of occurences of character in a string
 // PYTHON -----> color.count('red'); 
 // JS, Use regex 
 console.log((color.match(/red/g) || []).length); // search red OR return empty list
+
+
+
+// **********************************************************************************
+// **********************************************************************************
+// **********************************************************************************
+// 07-09-2020
+// 2. ) ************ VAR VS LET ******************
+
+
+// var's scope is in the whole fuction while LET's scope is with in  aa block
+// The below is valid for VAR, but not for let
+function demo(){
+    if (a == 1){
+        console.log(a);
+    }
+    else{
+        console.log(a)
+    }
+    var a;
+}
+// re declaring is valid for VAR, not for let
+var a = 10;
+var a = 20;
+
+// CONCLUSION: Use let whenever possible esp in closures and loops
+
+// **********************************************************************************
+// **********************************************************************************
+// **********************************************************************************
+// 3. ) ************ CONST and ARROR FUNCTIONS ******************
+
+// CONST is like LET, scoped
+// Use it when declaring constants or functions...the value should not change
+// The have to be initilized initially
+
+let valid; // This is valid
+// const invalid; This is not
+let radius = 10
+const pie = 3.14;   // Valid
+
+const obj = {
+    name:"simp"
+};
+console.log(obj)
+// Something inside the obj can be modified tho but not the actual obj
+
+obj.name = "son";
+console.log(obj)
+
+
+// ARROW FUNCTION
+// new syntax just like lambda functions of python but can hae multiple lines
+
+//  NORMAL FUNCTION
+const areaNormie = function(radius:number){
+    return pie * radius;
+}
+
+console.log(areaNormie(20));
+
+// Arrow Function
+
+const areaNew = (radius:number) => {
+    return pie * radius
+}
+
+// OR, variations
+
+const areaNew1 = (radius:number) => pie * radius
+
+console.log(areaNew1(20));
+
+
+// **********************************************************************************
+// **********************************************************************************
+// **********************************************************************************
+// 4. ) ************ THIS keyword ******************
+
+// THIS DOESNOT WORKS as the this is of the previous func scope
+// var thisDemo = {
+//     id: 1,
+//     demo : function() {
+//         setTimeout(function(){console.log(this.id)}, 1000)
+//     }
+// }
+
+// THIS WORKS
+var thisDemo = {
+    id: 1,
+    demo : function() {
+        var self = this
+        setTimeout(function(){console.log(self.id)}, 1000)
+    }
+
+}
+
+// ANOTHER, an arrow function does not creates its own this, so it uses the global one
+
+var thisDemo = {
+    id: 1,
+    demo : function() {
+        setTimeout(() => {console.log(this.id)}, 1000);
+    }
+
+}
+
+thisDemo.demo();
+
+
+
+// 5. ) ************ DEFAULT PARAMETERS ******************
+// They are just like python, es6 feature
+// WE can use 1st parameter inside 2nd param as default value, and can even use function call as default value
+
+let someDefault = function(val1:number=10, val2:number= val1*0.1){
+    console.log(val1 + val2);
+}
+
+someDefault();  // 11
+someDefault(20);    // 22
+someDefault(20,30); // 50
+
+
+
+
 
 
 
