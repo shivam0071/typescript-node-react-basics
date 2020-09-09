@@ -216,8 +216,39 @@ someDefault();  // 11
 someDefault(20);    // 22
 someDefault(20,30); // 50
 
+// 7. ) ************Rest Operators******************
+// they are ...
+
+let someFunction = function(message:any, ...colors:any){
+    console.log(message);
+    console.log(colors);
+}
+// The arguments are converted into list
+// They can also be used to create a copy of a list
+someFunction("Some Colors", "RED", "BLUE", "GREEN");
+
+// SPREAD OPERATOR --> ...
+// it also breaks the array into indivisual elements
+let c = ["BLACK", "PURPLE", "YELLOW"];
+someFunction("MORE COLORS", ...c);
 
 
+// 8. ) ************Object Literals******************
+let firstName:string = "Harry";
+let lastName:string =  "Potter";
+let fn = "full name";
+
+let obj2 = {
+    firstName,
+    lastName,
+    [fn]: "Jyoti Prakash"
+}
+
+console.log(obj2.firstName);
+console.log(obj2.lastName);
+console.log(obj2[fn]);
+// Notice how we are not doing firstName:firstName, also check the fn
+// The same works for return types of the fuctions -- return {some, data, da(){}}
 
 
 
