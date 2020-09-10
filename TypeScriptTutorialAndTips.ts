@@ -251,7 +251,83 @@ console.log(obj2[fn]);
 // The same works for return types of the fuctions -- return {some, data, da(){}}
 
 
+// ****************************************************************
+// ****************************************************************
+// 9. ) ************Arrays and Object Destruction******************
+// ****************************************************************
+// ****************************************************************
+
+// We can assign variables by - 
+let arr = ["Light", "Yagami", "M"];
+
+var [fname, lname, gender] = arr;
+// to have only one we can 
+// var [, , gender] = arr
+console.log(fname);
+console.log(lname);
+console.log(gender);
+
+// OR We can also 
+var [fname, ...elems] = arr;
+console.log(fname);
+console.log(elems);
+
+// COPYING THE WHOLE ARRAY
+var [...elem] = arr;
+console.log(elem);
 
 
+// OBJECT DECONSTRUCTION
+
+var sObj = {
+    fname: "Vegita",
+    lname: "Gupta",
+    gender: "M"
+}
+
+var {fname, lname, gender} = sObj;
+console.log(fname);
+console.log(lname);
+console.log(gender);
+
+// WE CAN also ALISASES but then we can't use the original names
+var {fname:f, lname:l, gender:g} = sObj;
+console.log(f);
+console.log(l);
+console.log(g);
 
 
+// ****************************************************************
+// ****************************************************************
+// 10. ) ************LOOPS******************
+// ****************************************************************
+// ****************************************************************
+
+var arr3  = ["RED", "BLUE", "GREEN"];
+
+
+// For with Index
+for(let index in arr3){
+    console.log(index, arr3[index]);
+}
+
+
+// FOR OF LOOP, iterating over elements not index
+for (let color of arr3){
+    console.log(color);
+}
+
+
+// ****************************************************************
+// ****************************************************************
+// 11. ) ************CLASSES******************
+// ****************************************************************
+// ****************************************************************
+
+// A class here is just s syntactic sugar, its equal to Obj.prototype.method
+class Person{
+    getALife(){}
+}
+let per = new Person()
+console.log(per.getALife === Person.prototype.getALife);
+// true;
