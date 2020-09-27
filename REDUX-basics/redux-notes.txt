@@ -42,7 +42,4 @@ mapDispatchToProps = dispatch =>{
     }
 
 
-
-
-
 we can use combinedreducers to combine different reducers, more on this later? [IMP tho]
